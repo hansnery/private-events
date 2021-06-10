@@ -1,8 +1,9 @@
 <div class="max-w-lg mx-auto mt-16 text-center">
   <h1 class="mb-4 text-3xl font-black">Your Events</h1>
   <% @events.each do |event| %>
+    <% event_link = event.name + " in " + event.location %>
     <p class="text-lg leading-snug  ">
-      <%= link_to event, event_path(event) %>a
+      <%= link_to event_link, event_path(event) %>
     </p>
   <% end %>
 </div>
