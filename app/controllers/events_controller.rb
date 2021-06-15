@@ -1,4 +1,7 @@
 class EventsController < ApplicationController
+  include EventsHelper
+  before_action :authenticate_user!
+
   def index
     @events = Event.all
   end
@@ -21,11 +24,5 @@ class EventsController < ApplicationController
       flash[:alert] = "Error in creating event!"
       render 'new'
     end
-  end
-
-  private
-
-  def event_params
-    params.require(:event).permit(:name, :location, :date, :user_id)
   end
 end
