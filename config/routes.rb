@@ -6,7 +6,6 @@ Rails.application.routes.draw do
       mount Sidekiq::Web => '/sidekiq'
     end
 
-
   devise_for :users
   root to: 'home#index'
   resources :events

@@ -21,7 +21,7 @@ class EventsController < ApplicationController
       flash[:notice] = "Event '#{@event.name}' created!"
       redirect_to @event
     else
-      flash[:alert] = "Error in creating event!"
+      flash[:alert] = "Error in organizing event!"
       render 'new'
     end
   end
