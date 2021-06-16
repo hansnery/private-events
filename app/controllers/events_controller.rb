@@ -25,4 +25,11 @@ class EventsController < ApplicationController
       render 'new'
     end
   end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.delete
+    flash[:notice] = "You have successfully canceled this event."
+    redirect_to events_path
+  end
 end
