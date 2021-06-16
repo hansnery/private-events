@@ -14,6 +14,10 @@ class EventsController < ApplicationController
     @event = Event.new
   end
 
+  def edit
+    @event = Event.find(params[:id])
+  end
+
   def create
     @event = current_user.events.build(event_params)
 
@@ -24,6 +28,13 @@ class EventsController < ApplicationController
       flash[:alert] = "Error in organizing event!"
       render 'new'
     end
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    @event.update(event_params)
+    flash[:notice] = "#{@event.name} was successfully edited."
+    redirect_to @event
   end
 
   def destroy
