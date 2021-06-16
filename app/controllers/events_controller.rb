@@ -23,6 +23,10 @@ class EventsController < ApplicationController
 
     if @event.save
       flash[:notice] = "Event '#{@event.name}' created!"
+      @invitation = Invitation.new
+      @invitation.attendee = current_user
+      @invitation.attended_event = @event
+      @invitation.save
       redirect_to @event
     else
       flash[:alert] = "Error in organizing event!"
@@ -39,7 +43,7 @@ class EventsController < ApplicationController
 
   def destroy
     @event = Event.find(params[:id])
-    @event.delete
+    @event.destroy
     flash[:notice] = "You have successfully canceled this event."
     redirect_to events_path
   end
