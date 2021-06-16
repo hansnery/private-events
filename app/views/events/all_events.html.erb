@@ -81,6 +81,14 @@
                   <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                     <%= link_to "Cancel Event", event, method: :delete, data: { confirm: "Are you sure you want to cancel this Event?" }, class: "text-indigo-600 hover:text-indigo-900" %>
                   </td>
+                <% elsif event.attendees.include?(current_user) %>
+                  <td class="py-4 whitespace-nowrap text-right text-sm font-medium">
+                    <%= link_to "Cancel Confirmation", attend_event_path(event), class: "text-indigo-600 hover:text-indigo-900" %>
+                  </td>
+                <% else %>
+                  <td class="py-4 whitespace-nowrap text-right text-sm font-medium">
+                    <%= link_to "Confirm Presence", attend_event_path(event), class: "text-indigo-600 hover:text-indigo-900" %>
+                  </td>
                 <% end %>
               </tr>
             </tbody>
