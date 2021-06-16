@@ -29,7 +29,7 @@ class EventsController < ApplicationController
       @invitation.save
       redirect_to @event
     else
-      flash[:alert] = "Error in organizing event!"
+      flash[:alert] = "Error in organizing event! Check the date and if there are any empty fields."
       render 'new'
     end
   end
@@ -44,7 +44,7 @@ class EventsController < ApplicationController
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
-    flash[:notice] = "You have successfully canceled this event."
+    flash[:notice] = "You have successfully canceled #{@event.name}."
     redirect_to events_path
   end
 end

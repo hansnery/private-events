@@ -10,34 +10,33 @@
                   Event Name
                 </label>
                 <div class="mt-1 flex rounded-md shadow-sm">
-                  <%= f.input :name, label: false, autofocus: true, error: 'Event Name is mandatory, please specify one' %>
+                  <%= f.input :name, label: false, autofocus: true, error: 'Event Name is mandatory, please specify one.' %>
                 </div>
-                <!-- <p class="mt-2 text-sm text-gray-500">
-                  Brief description for your profile. URLs are hyperlinked.
-                </p> -->
               </div>
             </div>
 
-            <div>
+            <div class="col-span-3 sm:col-span-3">
               <label for="location" class="block text-sm font-medium text-gray-700">
                 Location
               </label>
-              <div class="mt-1">
-                <%= f.input :location, label: false, error: 'Location is mandatory, please specify one' %>
+              <div class="mt-1 flex rounded-md shadow-sm">
+                <%= f.input :location, label: false, error: 'Location is mandatory, please specify one.' %>
               </div>
             </div>
             
-            <div>
+            <div class="col-span-3 sm:col-span-3 px-20">
               <label for="date" class="block text-sm font-medium text-gray-700">
                 Date
               </label>
-              <div class="mt-1">
+              <div class="mt-1 flex rounded-md shadow-sm">
                 <%= f.datetime_field :date, as: :date, start_year: Date.today.year,
                                               end_year: Date.today.year + 4,
                                               order: [:day, :month, :year],
-                                              label: false, error: 'Date is mandatory, please specify one',
-                                              html5: true %>
+                                              label: false, html5: true %>
               </div>
+              <!-- <p class="mt-2 text-sm text-gray-500">
+                Brief description for your profile. URLs are hyperlinked.
+              </p> -->
             </div>
 
             <div class="flex justify-center mt-1 gap-24">
