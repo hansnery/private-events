@@ -32,7 +32,7 @@
                 Date
               </label>
               <div class="mt-1">
-                <%= f.input :date, as: :date, start_year: Date.today.year,
+                <%= f.datetime_field :date, as: :date, start_year: Date.today.year,
                                               end_year: Date.today.year + 4,
                                               order: [:day, :month, :year],
                                               label: false, error: 'Date is mandatory, please specify one',
@@ -41,7 +41,7 @@
             </div>
 
             <div class="flex justify-center mt-1 gap-24">
-              <%= f.button :submit, "Schedule Event", class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+              <%= f.button :submit, "Submit", class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
               <%= link_to 'Cancel', events_path, class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
             </div>
           </div>

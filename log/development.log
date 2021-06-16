@@ -32802,3 +32802,367 @@ Processing by EventsController#index as HTML
 Completed 200 OK in 16ms (Views: 12.1ms | ActiveRecord: 0.4ms | Allocations: 5888)
 
 
+Started GET "/" for ::1 at 2021-06-15 23:47:06 -0300
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 403)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_head.html.erb (Duration: 16.9ms | Allocations: 5626)
+  Rendered shared/_flash_notice.html.erb (Duration: 0.4ms | Allocations: 253)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_header.html.erb:22
+  Rendered shared/_header.html.erb (Duration: 13.6ms | Allocations: 7989)
+  Rendered layout layouts/application.html.erb (Duration: 36.1ms | Allocations: 15178)
+Completed 200 OK in 62ms (Views: 42.2ms | ActiveRecord: 0.9ms | Allocations: 19962)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-15 23:47:06 -0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 40)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_head.html.erb (Duration: 27.7ms | Allocations: 3423)
+  Rendered shared/_flash_notice.html.erb (Duration: 0.3ms | Allocations: 57)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_header.html.erb:22
+  Rendered shared/_header.html.erb (Duration: 3.9ms | Allocations: 1249)
+  Rendered layout layouts/application.html.erb (Duration: 34.5ms | Allocations: 5027)
+Completed 200 OK in 36ms (Views: 35.3ms | ActiveRecord: 0.2ms | Allocations: 5594)
+
+
+Started GET "/events/new" for ::1 at 2021-06-15 23:47:08 -0300
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 96.0ms | Allocations: 15534)
+  Rendered events/new.html.erb within layouts/application (Duration: 97.7ms | Allocations: 15911)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_head.html.erb (Duration: 22.3ms | Allocations: 3406)
+  Rendered shared/_flash_notice.html.erb (Duration: 0.1ms | Allocations: 59)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 208)
+  Rendered layout layouts/application.html.erb (Duration: 122.9ms | Allocations: 19859)
+Completed 200 OK in 142ms (Views: 124.7ms | ActiveRecord: 0.9ms | Allocations: 27708)
+
+
+Started GET "/events/index" for ::1 at 2021-06-15 23:47:12 -0300
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:37
+  Rendered events/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1577)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_head.html.erb (Duration: 23.4ms | Allocations: 2873)
+  Rendered shared/_flash_notice.html.erb (Duration: 0.1ms | Allocations: 51)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 175)
+  Rendered layout layouts/application.html.erb (Duration: 31.5ms | Allocations: 4929)
+Completed 200 OK in 36ms (Views: 32.2ms | ActiveRecord: 0.4ms | Allocations: 6931)
+
+
+Started GET "/events/index" for ::1 at 2021-06-15 23:47:41 -0300
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:40
+  Rendered events/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1580)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_head.html.erb (Duration: 9.3ms | Allocations: 3319)
+  Rendered shared/_flash_notice.html.erb (Duration: 0.5ms | Allocations: 231)
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 491)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 6421)
+Completed 200 OK in 24ms (Views: 18.8ms | ActiveRecord: 0.3ms | Allocations: 8978)
+
+
+Started GET "/events/index" for ::1 at 2021-06-15 23:48:34 -0300
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:40
+  Rendered events/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1580)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_head.html.erb (Duration: 9.4ms | Allocations: 3312)
+  Rendered shared/_flash_notice.html.erb (Duration: 0.4ms | Allocations: 231)
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 491)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 6410)
+Completed 200 OK in 23ms (Views: 18.2ms | ActiveRecord: 0.4ms | Allocations: 9048)
+
+
+Started GET "/events/index" for ::1 at 2021-06-15 23:48:47 -0300
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:40
+  Rendered events/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1006)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_head.html.erb (Duration: 8.8ms | Allocations: 2863)
+  Rendered shared/_flash_notice.html.erb (Duration: 0.1ms | Allocations: 51)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 175)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 4346)
+Completed 200 OK in 17ms (Views: 13.8ms | ActiveRecord: 0.3ms | Allocations: 6021)
+
+
+Started GET "/events/index" for ::1 at 2021-06-15 23:48:53 -0300
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:40
+  Rendered events/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1006)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_head.html.erb (Duration: 8.2ms | Allocations: 2855)
+  Rendered shared/_flash_notice.html.erb (Duration: 0.1ms | Allocations: 51)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 175)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 4338)
+Completed 200 OK in 18ms (Views: 14.7ms | ActiveRecord: 0.3ms | Allocations: 5900)
+
+
+Started GET "/events/index" for ::1 at 2021-06-15 23:49:00 -0300
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:40
+  Rendered events/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1582)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_head.html.erb (Duration: 9.6ms | Allocations: 3312)
+  Rendered shared/_flash_notice.html.erb (Duration: 0.5ms | Allocations: 231)
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 491)
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 6415)
+Completed 200 OK in 24ms (Views: 20.5ms | ActiveRecord: 0.4ms | Allocations: 8940)
+
+
+Started GET "/events/index" for ::1 at 2021-06-15 23:49:06 -0300
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:40
+  Rendered events/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1581)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_head.html.erb (Duration: 7.4ms | Allocations: 3312)
+  Rendered shared/_flash_notice.html.erb (Duration: 0.4ms | Allocations: 231)
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 491)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 6411)
+Completed 200 OK in 21ms (Views: 17.2ms | ActiveRecord: 0.3ms | Allocations: 9053)
+
+
+Started GET "/events/1/edit" for ::1 at 2021-06-15 23:49:13 -0300
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:18:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 9.9ms | Allocations: 3981)
+  Rendered events/edit.html.erb within layouts/application (Duration: 11.8ms | Allocations: 4297)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_head.html.erb (Duration: 8.1ms | Allocations: 2750)
+  Rendered shared/_flash_notice.html.erb (Duration: 0.1ms | Allocations: 51)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 184)
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | Allocations: 7533)
+Completed 200 OK in 32ms (Views: 23.5ms | ActiveRecord: 0.7ms | Allocations: 10091)
+
+
+Started PATCH "/events/1" for ::1 at 2021-06-15 23:49:15 -0300
+Processing by EventsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "event"=>{"name"=>"Festa do Alface", "location"=>"Antônio Carlos", "date"=>"2021-06-16T00:00:00"}, "commit"=>"Submit", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:34:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:35:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:35:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:35:in `update'
+Redirected to http://localhost:3000/events/1
+Completed 302 Found in 28ms (ActiveRecord: 0.9ms | Allocations: 10213)
+
+
+Started GET "/events/1" for ::1 at 2021-06-15 23:49:15 -0300
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 206)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_head.html.erb (Duration: 13.6ms | Allocations: 3161)
+  Rendered shared/_flash_notice.html.erb (Duration: 0.1ms | Allocations: 58)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 202)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 3884)
+Completed 200 OK in 25ms (Views: 20.3ms | ActiveRecord: 0.4ms | Allocations: 6250)
+
+
+Started GET "/events/index" for ::1 at 2021-06-15 23:49:17 -0300
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:40
+  Rendered events/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1018)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_head.html.erb (Duration: 8.3ms | Allocations: 2903)
+  Rendered shared/_flash_notice.html.erb (Duration: 0.2ms | Allocations: 51)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 175)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 4398)
+Completed 200 OK in 23ms (Views: 18.9ms | ActiveRecord: 0.4ms | Allocations: 5966)
+
+
+Started GET "/events/1/edit" for ::1 at 2021-06-15 23:49:19 -0300
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:18:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 4.0ms | Allocations: 3585)
+  Rendered events/edit.html.erb within layouts/application (Duration: 4.7ms | Allocations: 3677)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_head.html.erb (Duration: 6.8ms | Allocations: 2748)
+  Rendered shared/_flash_notice.html.erb (Duration: 0.2ms | Allocations: 51)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 184)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 6911)
+Completed 200 OK in 25ms (Views: 14.4ms | ActiveRecord: 0.4ms | Allocations: 9008)
+
+
+Started PATCH "/events/1" for ::1 at 2021-06-15 23:49:25 -0300
+Processing by EventsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "event"=>{"name"=>"Festa do Alface", "location"=>"Antônio Carlos", "date"=>"2021-06-16T15:00"}, "commit"=>"Submit", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:34:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:35:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:35:in `update'
+  [1m[36mEvent Update (1.2ms)[0m  [1m[33mUPDATE "events" SET "date" = ?, "updated_at" = ? WHERE "events"."id" = ?[0m  [["date", "2021-06-16 15:00:00"], ["updated_at", "2021-06-16 02:49:25.082033"], ["id", 1]]
+  ↳ app/controllers/events_controller.rb:35:in `update'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:35:in `update'
+Redirected to http://localhost:3000/events/1
+Completed 302 Found in 18ms (ActiveRecord: 3.4ms | Allocations: 7849)
+
+
+Started GET "/events/1" for ::1 at 2021-06-15 23:49:25 -0300
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 60)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_head.html.erb (Duration: 9.9ms | Allocations: 2926)
+  Rendered shared/_flash_notice.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered shared/_header.html.erb (Duration: 0.4ms | Allocations: 198)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 3490)
+Completed 200 OK in 17ms (Views: 13.1ms | ActiveRecord: 0.4ms | Allocations: 5590)
+
+
+Started GET "/events/index" for ::1 at 2021-06-15 23:49:26 -0300
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:40
+  Rendered events/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1006)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_head.html.erb (Duration: 9.2ms | Allocations: 2869)
+  Rendered shared/_flash_notice.html.erb (Duration: 0.1ms | Allocations: 51)
+  Rendered shared/_header.html.erb (Duration: 0.4ms | Allocations: 175)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 4352)
+Completed 200 OK in 20ms (Views: 15.9ms | ActiveRecord: 0.4ms | Allocations: 5916)
+
+
+Started GET "/events/2/edit" for ::1 at 2021-06-15 23:49:36 -0300
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:18:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 3.7ms | Allocations: 3476)
+  Rendered events/edit.html.erb within layouts/application (Duration: 5.3ms | Allocations: 3568)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_head.html.erb (Duration: 11.9ms | Allocations: 2745)
+  Rendered shared/_flash_notice.html.erb (Duration: 0.1ms | Allocations: 51)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 184)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 6799)
+Completed 200 OK in 29ms (Views: 23.7ms | ActiveRecord: 0.5ms | Allocations: 8897)
+
+
+Started PATCH "/events/2" for ::1 at 2021-06-15 23:49:40 -0300
+Processing by EventsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "event"=>{"name"=>"Festa do João", "location"=>"Casa da Califa", "date"=>"2021-06-16T17:00"}, "commit"=>"Submit", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:34:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:35:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:35:in `update'
+  [1m[36mEvent Update (0.9ms)[0m  [1m[33mUPDATE "events" SET "date" = ?, "updated_at" = ? WHERE "events"."id" = ?[0m  [["date", "2021-06-16 17:00:00"], ["updated_at", "2021-06-16 02:49:40.962396"], ["id", 2]]
+  ↳ app/controllers/events_controller.rb:35:in `update'
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:35:in `update'
+Redirected to http://localhost:3000/events/2
+Completed 302 Found in 33ms (ActiveRecord: 6.3ms | Allocations: 10809)
+
+
+Started GET "/events/2" for ::1 at 2021-06-15 23:49:40 -0300
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 60)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_head.html.erb (Duration: 9.9ms | Allocations: 2909)
+  Rendered shared/_flash_notice.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 198)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 3473)
+Completed 200 OK in 19ms (Views: 13.2ms | ActiveRecord: 0.4ms | Allocations: 5573)
+
+
+Started GET "/events/index" for ::1 at 2021-06-15 23:49:42 -0300
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:40
+  Rendered events/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1006)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_head.html.erb (Duration: 10.2ms | Allocations: 2870)
+  Rendered shared/_flash_notice.html.erb (Duration: 0.1ms | Allocations: 51)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 175)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 4353)
+Completed 200 OK in 25ms (Views: 19.0ms | ActiveRecord: 0.4ms | Allocations: 5917)
+
+
