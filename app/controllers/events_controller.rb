@@ -52,13 +52,8 @@ class EventsController < ApplicationController
     redirect_to events_path
   end
 
-  def attend
+  def presence_in
     @event = Event.find(params[:id])
-    # flash[:notice] = "Your presence in'#{@event.name}' is confirmed!"
-    # @invitation = Invitation.new
-    # @invitation.attendee = current_user
-    # @invitation.attended_event = @event
-    # @invitation.save
     if @event.attendees.include?(current_user)
       flash[:alert] = "Your presence in'#{@event.name}' was canceled!"
       @event.attendees.delete(current_user)

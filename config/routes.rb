@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   root to: 'home#index'
   resources :events do
     member do
-      get 'attend'
+      get 'presence_in'
+      # get 'all_events'
     end
   end
   resources :invitations
