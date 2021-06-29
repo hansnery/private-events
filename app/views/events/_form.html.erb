@@ -34,9 +34,15 @@
                                               order: [:day, :month, :year],
                                               label: false, html5: true %>
               </div>
-              <!-- <p class="mt-2 text-sm text-gray-500">
-                Brief description for your profile. URLs are hyperlinked.
-              </p> -->
+            </div>
+
+            <div class="col-span-3 sm:col-span-3">
+              <label for="description" class="block text-sm font-medium text-gray-700">
+                Description
+              </label>
+              <div class="mt-1 flex rounded-md shadow-sm">
+                <%= f.input :desc, as: :text, label: false, error: 'Description is mandatory, please write one.' %>
+              </div>
             </div>
 
             <div class="flex justify-center mt-1 gap-24">
