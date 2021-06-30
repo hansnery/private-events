@@ -24,6 +24,15 @@
               </div>
             </div>
             
+            <div class="col-span-3 sm:col-span-3">
+              <label for="description" class="block text-sm font-medium text-gray-700">
+                Description
+              </label>
+              <div class="mt-1 flex rounded-md shadow-sm">
+                <%= f.input :desc, as: :text, label: false, error: 'Description is mandatory, please write one.' %>
+              </div>
+            </div>
+            
             <div class="col-span-3 sm:col-span-3 px-20">
               <label for="date" class="block text-sm font-medium text-gray-700">
                 Date
@@ -33,15 +42,6 @@
                                               end_year: Date.today.year + 4,
                                               order: [:day, :month, :year],
                                               label: false, html5: true %>
-              </div>
-            </div>
-
-            <div class="col-span-3 sm:col-span-3">
-              <label for="description" class="block text-sm font-medium text-gray-700">
-                Description
-              </label>
-              <div class="mt-1 flex rounded-md shadow-sm">
-                <%= f.input :desc, as: :text, label: false, error: 'Description is mandatory, please write one.' %>
               </div>
             </div>
 
