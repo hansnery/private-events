@@ -42,17 +42,45 @@
               </div>
             </div>
             
-            <div class="col-span-3 sm:col-span-3 px-20">
+            <div class="col-span-3 sm:col-span-3">
               <label for="date" class="block text-sm font-medium text-gray-700">
                 Date
               </label>
-              <div class="mt-1 flex rounded-md shadow-sm">
-                <%= f.datetime_field :date, as: :date, start_year: Date.today.year,
-                                              end_year: Date.today.year + 4,
-                                              order: [:day, :month, :year],
-                                              label: false, html5: true %>
+              <div class="flex justify-center">
+                <div class="mt-1 flex rounded-md shadow-sm align-center">
+                  <%= f.datetime_field :date, as: :date, start_year: Date.today.year,
+                                                end_year: Date.today.year + 4,
+                                                order: [:day, :month, :year],
+                                                label: false, html5: true %>
+                </div>
               </div>
             </div>
+
+            <label for="date" class="block text-sm font-medium text-gray-700">
+              Invite People
+            </label>
+           <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-3">
+              <% @users = User.all %>
+              <% @users.each do |user| %>
+                <div class="p-1">
+                  <div class="bg-white flex flex-col max-w-2xl items-center shadow overflow-hidden sm:rounded-lg">
+                    <div class="relative">
+                        <div class="flex items-center px-4 py-4">
+                          <div class="flex-shrink-0 h-10 w-10">
+                            <img class="h-10 w-10 rounded-full" src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" alt="">
+                          </div>
+                          <div class="ml-2">
+                            <div class="text-sm font-medium text-gray-900">
+                              <%= user.name %>
+                            </div>
+                            <%# radio button here %>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </dl>
 
             <div class="flex justify-center mt-1 gap-24">
               <%= f.button :submit, "Submit", class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
