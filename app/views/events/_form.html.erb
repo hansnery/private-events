@@ -32,6 +32,15 @@
                 <%= f.input :desc, as: :text, label: false, error: 'Description is mandatory, please write one.' %>
               </div>
             </div>
+
+            <div class="col-span-3 sm:col-span-3">
+              <label for="description" class="block text-sm font-medium text-gray-700">
+                Private
+              </label>
+              <div class="flex-1">
+                <%= f.input_field :private, as: :select, label: false %>
+              </div>
+            </div>
             
             <div class="col-span-3 sm:col-span-3 px-20">
               <label for="date" class="block text-sm font-medium text-gray-700">
