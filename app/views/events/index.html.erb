@@ -25,13 +25,13 @@
                 Status
               </th>
               
-              <th scope="col" class="relative px-6 py-3">
+              <th scope="col" class="min-w-full text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                 <span class="sr-only"></span>
               </th>
-              <th scope="col" class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th scope="col" class="min-w-full text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Actions
               </th>
-              <th scope="col" class="relative px-6 py-3">
+              <th scope="col" class="min-w-full text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                 <span class="sr-only"></span>
               </th>
             </tr>
@@ -71,14 +71,14 @@
                     Upcoming
                   </span>
                 </td>
-                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                  <%= link_to "Show", event_path(event), class: "text-indigo-600 hover:text-indigo-900" %>
+                <td class="whitespace-nowrap text-right text-sm font-medium">
+                  <%= link_to "Show", event_path(event), class: "w-24 ml-1 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
                 </td>
-                <td class="px-10 py-4 whitespace-nowrap text-right text-sm font-medium">
-                  <%= link_to "Edit", edit_event_path(event), class: "text-indigo-600 hover:text-indigo-900" %>
+                <td class="whitespace-nowrap text-right text-sm font-medium">
+                  <%= link_to "Edit", edit_event_path(event), class: "w-24 ml-1 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
                 </td>
-                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                  <%= link_to "Cancel Event", event, method: :delete, data: { confirm: "Are you sure you want to cancel this Event?" }, class: "text-indigo-600 hover:text-indigo-900" %>
+                <td class="whitespace-nowrap text-right text-sm font-medium">
+                  <%= link_to "Cancel Event", event, method: :delete, data: { confirm: "Are you sure you want to cancel this Event?" }, class: "w-24 ml-1 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500" %>
                 </td>
               </tr>
             </tbody>
