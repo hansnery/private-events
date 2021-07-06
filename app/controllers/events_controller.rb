@@ -12,6 +12,11 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @search = params["search"]
+    if @search.present?
+      @first_name = @search["first_name"]
+      @users = User.where(first_name: @first_name)
+    end
   end
 
   def new
@@ -63,5 +68,14 @@ class EventsController < ApplicationController
       @event.attendees << current_user
       redirect_to @event
     end
+  end
+
+  def send_invite
+    @user = User.find(params[:id])
+    flash[:notice] = "'#{@user.name}' invited!"
+    @invitation = Invitation.new
+    @invitation.attendee = @user
+    @invitation.attended_event = @event
+    @invitation.save
   end
 end

@@ -49,12 +49,52 @@
             <%= @event.desc %>
           </dd>
         </div>
+
+        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+          <dt class="text-sm font-medium text-gray-500">
+            Invitations
+          </dt>
+          <%= simple_form_for :search, url: event_path, method: "GET", html: { class: "flex rounded-md shadow-sm mt-1" } do |f| %>
+            <%= f.input :first_name, label: false, input_html: {value: ""} %>   
+            <%= f.submit "Search User", class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+          <% end %>
+        </div>
+        
+        <% if @search.present? %>
+          <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt class="text-sm font-medium text-gray-500">
+              Search Results
+            </dt>
+            <dl class="text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              <% @users.each do |user| %>
+                <div class="grid-flow-col whitespace-nowrap">
+                  <div class="flex items-center">
+                    <div class="flex-shrink-0 h-10 w-10">
+                      <img class="h-10 w-10 rounded-full" src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" alt="">
+                    </div>
+                    <div class="ml-4">
+                      <div class="text-sm font-medium text-gray-900">
+                        <%= user.name %>
+                      </div>
+                      <div class="text-sm text-gray-500">
+                        <%= user.email %>
+                      </div>
+                    </div>
+                    <div class="ml-4">
+                      <button type="button", method: :send_invite, class="inline-flex px-4 py-2 justify-center border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">Send Invitation</button>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </dl>
+          </div>
+        <% end %>
+        
         <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
           <dt class="text-sm font-medium text-gray-500">
             Attendees
           </dt>
         </div>
-          
         <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-3">
           <% @event.attendees.each do |attendee| %>
             <div class="relative">
@@ -76,7 +116,6 @@
             </div>
           <% end %>
         </dl>
-
       </dl>
     </div>
   </div>  

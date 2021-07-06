@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :events do
     member do
       get 'presence_in'
-      # get 'all_events'
+      get 'send_invite'
     end
   end
   resources :invitations
