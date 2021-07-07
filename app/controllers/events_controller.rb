@@ -32,10 +32,7 @@ class EventsController < ApplicationController
 
     if @event.save
       flash[:notice] = "Event '#{@event.name}' created!"
-      @invitation = Invitation.new
-      @invitation.attendee = current_user
-      @invitation.attended_event = @event
-      @invitation.save
+      create_invitation(current_user, @event)
       redirect_to @event
     else
       flash[:alert] = "Error in organizing event! Check the date and if there are any empty fields."
@@ -71,11 +68,11 @@ class EventsController < ApplicationController
   end
 
   def send_invite
-    @user = User.find(params[:id])
-    flash[:notice] = "'#{@user.name}' invited!"
-    @invitation = Invitation.new
-    @invitation.attendee = @user
-    @invitation.attended_event = @event
-    @invitation.save
+    @event = Event.find(params[:id])
+    @invited_user = User.find(params[:invited_user_id])
+    flash[:notice] = "'#{@invited_user.name}' invited!"
+    # create_invitation(@invited_user, @event)
+    @event.attendees << @invited_user
+    redirect_to @event
   end
 end
