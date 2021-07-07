@@ -14,8 +14,8 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @search = params["search"]
     if @search.present?
-      @first_name = @search["first_name"]
-      @users = User.where(first_name: @first_name)
+      @searched_name = @search["name"].split(/\W+/)
+      @users = User.where("first_name LIKE ? OR last_name LIKE ?", "#{@searched_name[0]}", "#{@searched_name[1]}")
     end
   end
 
@@ -59,20 +59,23 @@ class EventsController < ApplicationController
     if @event.attendees.include?(current_user)
       flash[:alert] = "Your presence in'#{@event.name}' was canceled!"
       @event.attendees.delete(current_user)
-      redirect_to all_events_path
     else
       flash[:notice] = "Your presence in'#{@event.name}' is confirmed!"
       @event.attendees << current_user
-      redirect_to @event
     end
+    redirect_to all_events_path
   end
 
   def send_invite
     @event = Event.find(params[:id])
     @invited_user = User.find(params[:invited_user_id])
-    flash[:notice] = "'#{@invited_user.name}' invited!"
-    # create_invitation(@invited_user, @event)
-    @event.attendees << @invited_user
+    if @event.attendees.include?(@invited_user)
+      flash[:alert] = "'#{@invited_user.name}' has already accepted the invitation!"
+    else
+      flash[:notice] = "'#{@invited_user.name}' invited!"
+      # create_invitation(@invited_user, @event)
+      @event.attendees << @invited_user
+    end
     redirect_to @event
   end
 end
