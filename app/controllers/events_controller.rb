@@ -43,24 +43,25 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     @event.update(event_params)
-    flash[:notice] = "#{@event.name} was successfully edited."
+    flash[:notice] = "'#{@event.name}' was successfully edited."
     redirect_to @event
   end
 
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
-    flash[:notice] = "You have successfully canceled #{@event.name}."
+    flash[:notice] = "You have successfully canceled '#{@event.name}'."
     redirect_to events_path
   end
 
   def presence_in
     @event = Event.find(params[:id])
     if @event.attendees.include?(current_user)
-      flash[:alert] = "Your presence in'#{@event.name}' was canceled!"
+      flash[:alert] = "Your presence in '#{@event.name}' was canceled!"
       @event.attendees.delete(current_user)
     else
-      flash[:notice] = "Your presence in'#{@event.name}' is confirmed!"
+      flash[:notice] = "Your presence in '#{@event.name}' is confirmed!"
+      @event.invited_users.delete(current_user)
       @event.attendees << current_user
     end
     redirect_to all_events_path

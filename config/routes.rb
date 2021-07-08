@@ -14,7 +14,12 @@ Rails.application.routes.draw do
       get 'send_invite'
     end
   end
-  resources :invitations
+  resources :invitations do
+    member do
+      get 'accept'
+      get 'refuse'
+    end
+  end
   get 'all_events', to: 'events#all_events'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

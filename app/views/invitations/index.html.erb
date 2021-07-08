@@ -15,8 +15,7 @@
           <% @invitations_events.each do |invitation_event_id| %>
             <% @events.upcoming.each do |event| %>
               <% next unless event.id == invitation_event_id %>
-              <% next if event.creator == current_user || event.invited_users.include?(current_user) %>
-              <%= render "shared/table_head" %>
+              <% next if event.creator == current_user || event.attendees.include?(current_user) %>
               <tbody class="bg-white divide-y divide-gray-200">
                 <tr>
                   <td class="px-6 py-4 whitespace-nowrap">
@@ -53,55 +52,13 @@
                       Upcoming
                     </span>
                   </td>
-                  <td class="whitespace-nowrap text-right text-sm font-medium">
-                    <%= link_to "Accept", event_path(event), class: "w-24 ml-1 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500" %>
+                  <td class="whitespace-nowrap text-right text-sm font-medium pl-10">
+                    <%= link_to "Accept", accept_invitation_path(event), class: "w-24 ml-1 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500" %>
                   </td>
-                  <td class="whitespace-nowrap text-right text-sm font-medium">
-                    <%= link_to "Refuse", event, method: :delete, data: { confirm: "Are you sure you want to cancel this Event?" }, class: "w-24 ml-1 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500" %>
+                  <td>
                   </td>
-                </tr>
-              </tbody>
-            <% end %>
-            <% @events.attended.each do |event| %>
-              <% next unless event.id == invitation_event_id %>
-              <% next if event.creator == current_user %>
-              <%= render "shared/table_head" %>
-              <tbody class="bg-white divide-y divide-gray-200">
-                <tr>
-                  <td class="px-6 py-4 whitespace-nowrap">
-                    <div class="flex items-center">
-                      <div class="flex-shrink-0 h-10 w-10">
-                        <img class="h-10 w-10 rounded-full" src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" alt="">
-                      </div>
-                      <div class="ml-4">
-                        <div class="text-sm font-medium text-gray-900">
-                          <%= event.creator.name %>
-                        </div>
-                        <div class="text-sm text-gray-500">
-                          <%= event.creator.email %>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="px-3 py-4 whitespace-nowrap">
-                    <div class="text-sm text-gray-900"><%= event.name %></div>
-                  </td>
-                  <td class="px-3 py-4 whitespace-nowrap text-sm text-gray-500">
-                    <div class="text-sm text-gray-900"><%= event.location %></div>
-                  </td>
-                  <td class="px-3 py-4 whitespace-nowrap text-sm text-gray-500">
-                    <div class="text-sm text-gray-900"><%= event.date.strftime("%m/%d/%Y") %></div>
-                  </td>
-                  <td class="px-3 py-4 whitespace-nowrap text-sm text-gray-500">
-                    <div class="text-sm text-gray-900"><%= event.date.strftime("%H:%M") %></div>
-                  </td>
-                  <td class="px-3 py-4 whitespace-nowrap">
-                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-grey-800">
-                      Attended
-                    </span>
-                  </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                    <%= link_to "Show", event_path(event), class: "text-indigo-600 hover:text-indigo-900" %>
+                  <td class="whitespace-nowrap text-right text-sm font-medium pr-10">
+                    <%= link_to "Ignore", refuse_invitation_path(event), class: "w-24 ml-1 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500" %>
                   </td>
                 </tr>
               </tbody>
