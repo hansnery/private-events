@@ -32,7 +32,7 @@ class EventsController < ApplicationController
 
     if @event.save
       flash[:notice] = "Event '#{@event.name}' created!"
-      @event.invited_users << current_user
+      @event.attendees << current_user
       redirect_to @event
     else
       flash[:alert] = "Error in organizing event! Check the date and if there are any empty fields."
