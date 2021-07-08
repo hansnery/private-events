@@ -5,7 +5,7 @@ This repository is an assignment part of the Odin Project`s curriculum.
 # How to run this
 Clone the repository into your local machine:
 
-$ git clone https://github.com/hansnery/private-events.git
+`$ git clone https://github.com/hansnery/private-events.git`
 
 Install the required gems:
 
