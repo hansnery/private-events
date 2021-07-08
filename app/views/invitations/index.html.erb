@@ -10,7 +10,7 @@
           <% @invitations_events.each do |invitation_event_id| %>
             <% @events.upcoming.each do |event| %>
               <% next unless event.id == invitation_event_id %>
-              <% next if event.creator == current_user || event.attendees.include?(current_user) %>
+              <% next if event.creator == current_user || event.invited_users.include?(current_user) %>
               <%= render "shared/table_head" %>
               <tbody class="bg-white divide-y divide-gray-200">
                 <tr>

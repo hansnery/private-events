@@ -32,7 +32,7 @@ class EventsController < ApplicationController
 
     if @event.save
       flash[:notice] = "Event '#{@event.name}' created!"
-      @event.attendees << current_user
+      @event.invited_users << current_user
       redirect_to @event
     else
       flash[:alert] = "Error in organizing event! Check the date and if there are any empty fields."
@@ -69,7 +69,7 @@ class EventsController < ApplicationController
   def send_invite
     @event = Event.find(params[:id])
     @invited_user = User.find(params[:invited_user_id])
-    if @event.attendees.include?(@invited_user)
+    if @event.invited_users.include?(@invited_user)
       flash[:alert] = "'#{@invited_user.name}' has already accepted the invitation!"
     else
       flash[:notice] = "'#{@invited_user.name}' invited!"

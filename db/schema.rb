@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_01_183206) do
+ActiveRecord::Schema.define(version: 2021_07_08_160210) do
+
+  create_table "confirmations", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "attendee_id"
+    t.integer "attended_event_id"
+    t.index ["attended_event_id"], name: "index_confirmations_on_attended_event_id"
+    t.index ["attendee_id"], name: "index_confirmations_on_attendee_id"
+  end
 
   create_table "events", force: :cascade do |t|
     t.string "name"
@@ -37,8 +46,10 @@ ActiveRecord::Schema.define(version: 2021_07_01_183206) do
   create_table "invitations", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "attendee_id"
-    t.integer "attended_event_id"
+    t.integer "invited_user_id"
+    t.integer "invited_event_id"
+    t.index ["invited_event_id"], name: "index_invitations_on_invited_event_id"
+    t.index ["invited_user_id"], name: "index_invitations_on_invited_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -56,6 +67,4 @@ ActiveRecord::Schema.define(version: 2021_07_01_183206) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "invitations", "events", column: "attended_event_id"
-  add_foreign_key "invitations", "users", column: "attendee_id"
 end

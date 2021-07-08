@@ -99,34 +99,67 @@
           <% end %>
         <% end %>
         
-        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-          <dt class="text-sm font-medium text-gray-500">
-            Attendees
-          </dt>
-        </div>
-        <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-3">
-          <% @event.attendees.each do |attendee| %>
-            <div class="relative">
-              <div class="grid-flow-col whitespace-nowrap">
-                <div class="flex items-center px-4 py-4">
-                  <div class="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-500 text-white">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                    </svg>
-                  </div>
-                  <div class="ml-4">
-                    <div class="text-sm font-medium text-gray-900">
-                      <%= attendee.name %>
+        <% unless @event.invited_users.empty? %>
+          <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt class="text-sm font-medium text-gray-500">
+              Invited People
+            </dt>
+          </div>
+          <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-3">
+            <% @event.invited_users.each do |invited_user| %>
+              <div class="relative">
+                <div class="grid-flow-col whitespace-nowrap">
+                  <div class="flex items-center px-4 py-4">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-500 text-white">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                      </svg>
                     </div>
-                    <div class="text-sm text-gray-500">
-                      <%= attendee.email %>
+                    <div class="ml-4">
+                      <div class="text-sm font-medium text-gray-900">
+                        <%= invited_user.name %>
+                      </div>
+                      <div class="text-sm text-gray-500">
+                        <%= invited_user.email %>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          <% end %>
-        </dl>
+            <% end %>
+          </dl>
+        <% end %>
+
+        <% unless @event.attendees.empty? %>
+          <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt class="text-sm font-medium text-gray-500">
+              Confirmed People
+            </dt>
+          </div>
+          <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-3">
+            <% @event.attendees.each do |attendee| %>
+              <div class="relative">
+                <div class="grid-flow-col whitespace-nowrap">
+                  <div class="flex items-center px-4 py-4">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-500 text-white">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                      </svg>
+                    </div>
+                    <div class="ml-4">
+                      <div class="text-sm font-medium text-gray-900">
+                        <%= attendee.name %>
+                      </div>
+                      <div class="text-sm text-gray-500">
+                        <%= attendee.email %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </dl>
+        <% end %>
       </dl>
     </div>
   </div>  

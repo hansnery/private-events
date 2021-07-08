@@ -5,8 +5,5 @@ module EventsHelper
 
   def create_invitation(user, event)
     @invitation = Invitation.new
-    @invitation.attendee = user
-    @invitation.attended_event = event
-    @invitation.save
   end
 end
