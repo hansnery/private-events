@@ -73,7 +73,7 @@ class EventsController < ApplicationController
       flash[:alert] = "'#{@invited_user.name}' has already accepted the invitation!"
     else
       flash[:notice] = "'#{@invited_user.name}' invited!"
-      create_invitation(@invited_user, @event)
+      @event.invited_users << @invited_user
     end
     redirect_to @event
   end
