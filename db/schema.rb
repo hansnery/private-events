@@ -12,11 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2021_07_08_160210) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "confirmations", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "attendee_id"
-    t.integer "attended_event_id"
+    t.bigint "attendee_id"
+    t.bigint "attended_event_id"
     t.index ["attended_event_id"], name: "index_confirmations_on_attended_event_id"
     t.index ["attendee_id"], name: "index_confirmations_on_attendee_id"
   end
@@ -25,7 +28,7 @@ ActiveRecord::Schema.define(version: 2021_07_08_160210) do
     t.string "name"
     t.string "location"
     t.datetime "date"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "private", default: false
@@ -46,8 +49,8 @@ ActiveRecord::Schema.define(version: 2021_07_08_160210) do
   create_table "invitations", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "invited_user_id"
-    t.integer "invited_event_id"
+    t.bigint "invited_user_id"
+    t.bigint "invited_event_id"
     t.index ["invited_event_id"], name: "index_invitations_on_invited_event_id"
     t.index ["invited_user_id"], name: "index_invitations_on_invited_user_id"
   end
