@@ -8,6 +8,10 @@ This repository is an assignment part of the Odin Project`s curriculum.
 
 ## How to run this
 
+## Live
+Go to: https://private-events-by-hansnery.herokuapp.com/
+
+## Locally
 Clone the repository into your local machine:
 
 ```ruby
@@ -24,6 +28,12 @@ Run migration:
 
 ```ruby
 $ rails db:migrate
+```
+
+Populate the database:
+
+```ruby
+$ rails db:seed
 ```
 
 Run the server:
