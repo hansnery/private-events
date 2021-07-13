@@ -6,11 +6,20 @@ This repository is an assignment part of the Odin Project`s curriculum.
   <img src="https://user-images.githubusercontent.com/19158296/124976303-73f7a580-e005-11eb-9369-d1933ecb7d66.jpg" alt="Private-Events" width="390" height="200">
 </p>
 
-## How to run this
+# How to run this
 
 ## Live
-Go to: https://private-events-by-hansnery.herokuapp.com/
+Go to:  
+https://private-events-by-hansnery.herokuapp.com/  
 
+You can use the test account below to login:  
+
+**Login:**  
+test@test.com  
+**Password:**  
+test123  
+
+Or create a new one.
 ## Locally
 Clone the repository into your local machine:
 
