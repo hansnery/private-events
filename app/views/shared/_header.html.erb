@@ -37,7 +37,11 @@
               <% end %>
             </div>
           <% end %>
-          <%= link_to "#{current_user.name}", edit_user_registration_path, class: "btn btn-default mb-2 lg:mr-2 lg:mb-0 block" %>
+          <% if current_user.name == 'Test Account' %>
+            <%= link_to "#{current_user.name}", "#", :title => "You can`t edit an account for testing.", class: "cursor-not-allowed disabled:opacity-50 btn btn-default mb-2 lg:mr-2 lg:mb-0 block" %>
+          <% else %>
+            <%= link_to "#{current_user.name}", edit_user_registration_path, class: "btn btn-default mb-2 lg:mr-2 lg:mb-0 block" %>
+          <% end %>
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"btn btn-default mb-2 lg:mb-0 block" %>
         <% else %>
           <%= link_to "Login", new_user_session_path, class:"btn btn-default mb-2 lg:mr-2 lg:mb-0 block" %>
