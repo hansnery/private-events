@@ -52,9 +52,15 @@
                 <td class="whitespace-nowrap text-right text-sm font-medium pl-4">
                   <%= link_to "Show", event_path(event), class: "w-24 ml-1 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
                 </td>
-                <td class="whitespace-nowrap text-right text-sm font-medium">
-                  <%= link_to "Edit", edit_event_path(event), class: "w-24 ml-1 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
-                </td>
+                <% if event.creator == current_user %>
+                  <td class="whitespace-nowrap text-right text-sm font-medium">
+                    <%= link_to "Edit", edit_event_path(event), class: "w-24 ml-1 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+                  </td>
+                <% else %>
+                  <td class="whitespace-nowrap text-right text-sm font-medium">
+                    <%#= link_to "Edit", all_events_path, :title => "This is being hosted by someone else", class: "cursor-not-allowed disabled:opacity-50 w-24 ml-1 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500" %>
+                  </td>
+                <% end %>
                 <% if event.attendees.include?(current_user) %>
                   <td class="whitespace-nowrap text-right text-sm font-medium pr-4">
                     <%= link_to "Unconfirm", presence_in_event_path(event), class: "w-24 ml-1 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500" %>
