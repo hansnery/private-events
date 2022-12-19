@@ -8,18 +8,6 @@ This repository is an assignment part of the Odin Project`s curriculum.
 
 # How to run this
 
-## Live
-Go to:  
-https://private-events-by-hansnery.herokuapp.com/  
-
-You can use the test account below to login:  
-
-**Login:**  
-test@test.com  
-**Password:**  
-test123  
-
-Or create a new one.
 ## Locally
 Clone the repository into your local machine:
 
